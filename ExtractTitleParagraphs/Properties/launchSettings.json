@@ -1,0 +1,24 @@
+{
+  "profiles": {
+    "Part1": {
+      "commandName": "Project",
+      "commandLineArgs": "29500-1-WD5.0.docx 1 StatsOfNotesAndExamples\\title1.txt",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive\\WG4"
+    },
+    "Part4": {
+      "commandName": "Project",
+      "commandLineArgs": "29500-4-WD5.0.docx 4 StatsOfNotesAndExamples\\title4.txt",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive\\WG4"
+    },
+    "Part4BKMK": {
+      "commandName": "Project",
+      "commandLineArgs": "29500-4-WD5.0.docx 4 StatsOfNotesAndExamples\\title4bkmk.txt",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive\\WG4"
+    },
+    "Part1BKMK": {
+      "commandName": "Project",
+      "commandLineArgs": "29500-1-WD5.0.docx 1 StatsOfNotesAndExamples\\title1bkmk.txt",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive\\WG4"
+    }
+  }
+}

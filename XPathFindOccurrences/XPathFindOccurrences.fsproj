@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Toolkit.fs" />
+    <Compile Include="MergeSort.fs" />
+    <Compile Include="TokenOrParenthesis.fs" />
+    <Compile Include="SecTitle.fs" />
+    <Compile Include="CreateSectionFinder.fs" />
+    <Compile Include="SecHeaderAndNumber.fs" />
+    <Compile Include="EnumerateParagraphsAndTableRows.fs" />
+    <Compile Include="FindPosition.fs" />
+    <Compile Include="GetMarkerPosition.fs" />
+    <Compile Include="ForbiddenWords.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="28.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="6.0.5" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,44 @@
+{
+  "profiles": {
+    "note4": {
+      "commandName": "Project",
+      "commandLineArgs": "noteXPaths.txt 29500-4-WD5.0.docx StatsOfNotesAndExamples\\note_positions4.tsv",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive\\WG4"
+    },
+    "note1": {
+      "commandName": "Project",
+      "commandLineArgs": "noteXPaths.txt  29500-1-WD5.0.docx StatsOfNotesAndExamples\\note_positions.tsv",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive\\WG4\\"
+    },
+    "example1": {
+      "commandName": "Project",
+      "commandLineArgs": "exampleXPaths.txt 29500-1-WD5.0.docx StatsOfNotesAndExamples\\example_positions.tsv",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive\\WG4"
+    },
+    "example4": {
+      "commandName": "Project",
+      "commandLineArgs": "exampleXPaths.txt  29500-4-WD5.0.docx StatsOfNotesAndExamples\\example_positions4.tsv",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive\\WG4"
+    },
+    "guidance1": {
+      "commandName": "Project",
+      "commandLineArgs": "guidanceXPaths.txt  29500-1-WD5.0.docx StatsOfNotesAndExamples\\guidance_positions.tsv",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive\\WG4"
+    },
+    "rationale1": {
+      "commandName": "Project",
+      "commandLineArgs": "rationaleXPaths.txt  29500-1-WD5.0.docx StatsOfNotesAndExamples\\rationale_positions.tsv",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive\\WG4"
+    },
+    "rationale4": {
+      "commandName": "Project",
+      "commandLineArgs": "rationaleXPaths.txt  29500-4-WD5.0.docx StatsOfNotesAndExamples\\rationale_positions4.tsv",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive\\WG4"
+    },
+    "guidance4": {
+      "commandName": "Project",
+      "commandLineArgs": "guidanceXPaths.txt  29500-4-WD5.0.docx StatsOfNotesAndExamples\\guidance_positions4.tsv",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive\\WG4"
+    }
+  }
+}

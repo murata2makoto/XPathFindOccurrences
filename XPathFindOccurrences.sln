@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "XPathFindOccurrences", "XPathFindOccurrences\XPathFindOccurrences.fsproj", "{9AC291B0-E185-4F9A-8374-506809B7A10C}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ExtractTitleParagraphs", "ExtractTitleParagraphs\ExtractTitleParagraphs.fsproj", "{EF3A4C6A-227B-4459-8D05-256A479C8769}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9AC291B0-E185-4F9A-8374-506809B7A10C} = {9AC291B0-E185-4F9A-8374-506809B7A10C}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9AC291B0-E185-4F9A-8374-506809B7A10C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AC291B0-E185-4F9A-8374-506809B7A10C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AC291B0-E185-4F9A-8374-506809B7A10C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AC291B0-E185-4F9A-8374-506809B7A10C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF3A4C6A-227B-4459-8D05-256A479C8769}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF3A4C6A-227B-4459-8D05-256A479C8769}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF3A4C6A-227B-4459-8D05-256A479C8769}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF3A4C6A-227B-4459-8D05-256A479C8769}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {25F40979-601B-4029-9890-1355686658B4}
+	EndGlobalSection
+EndGlobal
