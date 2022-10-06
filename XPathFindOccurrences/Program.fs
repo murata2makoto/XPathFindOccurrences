@@ -58,9 +58,8 @@ let main argv =
                     (createTitleElemList doc mgr part1P)
             use sw = createTextWriteFromOutputFileName outputFileName
             let pairs = 
-                findElementForXPaths xPaths doc mgr hash
+                findElementForXPaths1 xPaths doc mgr hash
                 |> createPairs  |> addContent 
-            let mutable previousIndex = -1
             help2 pairs sectionFinder sw 
             sw.Close()
             0

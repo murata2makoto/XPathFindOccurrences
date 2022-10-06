@@ -3,6 +3,7 @@
 open System.Collections.Generic
 open System.Xml.XPath
 open System.Xml.Linq
+open MergeSort
 
 let private findPosition 
   (e: XElement) (hash: Dictionary<XElement, int list>) =
@@ -23,22 +24,23 @@ let private comparer
     elif p1i = p2i then 0
     else failwith "hen";;
 
-let findElementForXPaths 
+let findElementForXPaths1 
         xpathList (doc: XDocument) manager 
         (hash: Dictionary<XElement, int list>)= 
-    let xpathIndex_elem_list = 
-        xpathList 
-        |> List.mapi (fun i xpath -> 
-                        try
-                            doc.XPathSelectElements(xpath, manager)
-                            |> List.ofSeq
-                            |> List.map (fun x -> i, xpath, x,                                          findPosition x hash)
-                        with 
-                        | :? System.Xml.XPath.XPathException as e ->
-                            printfn "%s: %s" (e.Message) xpath
-                            failwith "")   
-    [for l in xpathIndex_elem_list do yield! l]
-    |> List.sortWith comparer
+    let help i xpath =
+        try
+            [for x in doc.XPathSelectElements(xpath, manager) do
+                yield i, xpath, x, findPosition x hash]
+        with 
+            | :? System.Xml.XPath.XPathException as e ->
+                printfn "%s: %s" (e.Message) xpath
+                failwith "" 
+    match xpathList with
+    | [startMarkerXPath;endMarkerXPath] ->
+        let startMarkers = help 0 startMarkerXPath
+        let endMarkers = help 1 endMarkerXPath
+        mergesort1 comparer startMarkers endMarkers
+    |_ -> failwith "hen"
     
 let createPairs (l: (int*string* XElement * int list) list) = 
     let mutable (prevPindex, prevXpath, prevXelem, prevPosList) = 
@@ -51,8 +53,10 @@ let createPairs (l: (int*string* XElement * int list) list) =
             prevXelem <-xelem
             prevPosList <- posList
         | -1, 1 ->
+            printfn "Skipped: %s" xelem.Value
             ()
         | 0, 0 -> 
+            printfn "Skipped: %s" prevXelem.Value
             prevPindex <- 0
             prevXpath <- xpath
             prevXelem <-xelem

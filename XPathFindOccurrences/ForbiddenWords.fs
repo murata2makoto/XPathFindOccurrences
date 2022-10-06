@@ -1,16 +1,13 @@
 ﻿module ForbiddenWords
 
+let private ignoreCase = System.StringComparison.CurrentCultureIgnoreCase
+
 let private help (str: string) =
-    str.Contains("shall",
-        System.StringComparison.CurrentCultureIgnoreCase) ||
-    str.Contains("should",
-        System.StringComparison.CurrentCultureIgnoreCase) ||
-    str.Contains("may",
-        System.StringComparison.CurrentCultureIgnoreCase) ||
-    str.Contains("is required to",
-        System.StringComparison.CurrentCultureIgnoreCase)||
-    str.Contains("are required to",
-        System.StringComparison.CurrentCultureIgnoreCase)
+    str.Contains("shall",ignoreCase) ||
+    str.Contains("should",ignoreCase) ||
+    str.Contains("may",ignoreCase) ||
+    str.Contains("is required to",ignoreCase)||
+    str.Contains("are required to",ignoreCase)
 
 let hasForbiddenWords (contents: seq<string>) msp mep = 
     match contents |> Seq.length with
