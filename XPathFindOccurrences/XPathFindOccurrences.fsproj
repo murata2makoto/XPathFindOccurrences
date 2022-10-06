@@ -15,6 +15,7 @@
     <Compile Include="EnumerateParagraphsAndTableRows.fs" />
     <Compile Include="FindPosition.fs" />
     <Compile Include="GetMarkerPosition.fs" />
+    <Compile Include="GetStartEndMarkerPairs.fs" />
     <Compile Include="ForbiddenWords.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>

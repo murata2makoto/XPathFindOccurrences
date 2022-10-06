@@ -7,6 +7,7 @@ open FindPosition
 open Toolkit
 open CreateSectionFinder
 open GetMarkerPosition
+open GetStartEndMarkerPairs
 open ForbiddenWords
 open System.IO
 open System.Xml.Linq
@@ -34,15 +35,14 @@ let help2 (pairs: (string *
         "End Marker Position"  
         "Content"    
     for (xpath, starElem, _ ,_ ,_ , contents) in pairs do 
-        let msp = 
-            getMarkerPosition xpath true (Seq.head contents)
-        let mep = 
-            getMarkerPosition xpath false (Seq.last contents)
         let sectionNumber = finder starElem
-        let flag = hasForbiddenWords contents msp mep 
-        fprintf sw "%s\t%b\t%d\t%d\t" sectionNumber flag msp mep 
-        contents |> Seq.iter (fun cont -> fprintf sw "%s " cont) 
-        sw.WriteLine()
+        let msp_mep_pairs = 
+            getStartEndMarkerPairs xpath contents
+        for (msp, mep) in msp_mep_pairs do
+            let flag = hasForbiddenWords contents msp mep 
+            fprintf sw "%s\t%b\t%d\t%d\t" sectionNumber flag msp mep 
+            contents |> Seq.iter (fun cont -> fprintf sw "%s " cont) 
+            sw.WriteLine()
 
 [<EntryPoint>]
 let main argv =
