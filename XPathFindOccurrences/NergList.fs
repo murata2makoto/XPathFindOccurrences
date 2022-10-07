@@ -1,4 +1,4 @@
-﻿module XPathFindOccurrences.FindPosition
+﻿module XPathFindOccurrences.NERGList
 
 open System.Collections.Generic
 open System.Xml.XPath
@@ -24,7 +24,7 @@ let private comparer
     elif p1i = p2i then 0
     else failwith "hen";;
 
-let findElementForXPaths1 
+let private findElementForXPaths 
         xpathList (doc: XDocument) manager 
         (hash: Dictionary<XElement, int list>)= 
     let help i xpath =
@@ -41,8 +41,18 @@ let findElementForXPaths1
         let endMarkers = help 1 endMarkerXPath
         mergesort1 comparer startMarkers endMarkers
     |_ -> failwith "hen"
-    
-let createPairs (l: (int*string* XElement * int list) list) = 
+ 
+let mergeable (spl:int list) (epl:int list) = 
+    match spl, epl with
+    | [_], [_] -> true
+    | [_; _], [_] -> printfn "Not mergable: %A %d" spl epl.Head ; false
+    | [_], [_; _] -> printfn "Not mergable: %d %A" spl.Head epl; false
+    | [x; _], [y; _] when x = y -> true
+    | [x; _], [y; _] when x <> y -> printfn "Not mergable: %A %A" spl epl; false
+    | _ -> failwith "hen"
+
+
+let private createPairs (l: (int*string* XElement * int list) list) = 
     let mutable (prevPindex, prevXpath, prevXelem, prevPosList) = 
         (-1,"", null, [])
     [for (pindex, xpath, xelem, posList) in l do
@@ -62,12 +72,13 @@ let createPairs (l: (int*string* XElement * int list) list) =
             prevXelem <-xelem
             prevPosList <- posList
         | 0, 1 -> 
-            yield (prevXpath, prevXelem, prevPosList, xelem, posList)
+            if mergeable prevPosList posList then
+                yield (prevXpath, prevXelem, prevPosList, xelem, posList)
             prevPindex <- -1
         | _ -> failwith "hen"
         ]
 
-let addContent (l: (string*XElement * int list * XElement * int list) list) =
+let private addContent (l: (string*XElement * int list * XElement * int list) list) =
     [for (xpath, xe1, posLst1, xe2, posLst2) in l do
         if xe1 = xe2 then
             let contents = 
@@ -98,3 +109,8 @@ let addContent (l: (string*XElement * int list * XElement * int list) list) =
                         xei.Value.Replace("\"", "\"\""))
             if xe1 = xe2 || xe1.NodesAfterSelf() |> Seq.contains xe2 then
                 yield xpath, xe1, posLst1, xe2, posLst2, contents]
+
+let extractNERGList xpathList (doc: XDocument) manager 
+        (hash: Dictionary<XElement, int list>)= 
+    findElementForXPaths xpathList doc manager hash 
+    |> createPairs  |> addContent 

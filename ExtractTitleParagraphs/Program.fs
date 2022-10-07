@@ -7,42 +7,13 @@ open System.Xml.XPath
 open System.Xml.Linq
 open SecTitle
 open PrintAction
-
-let doubtfulStylenames = [
-    "CenteredHeading";
-    "UnnumberedHeading";
-    "ISOHeadingBold";
-    "ISOHeading";
-    "BodyText";
-    "ListNumber";
-    "ListNumber";
-    "ListParagraph";
-    "Grammar";
-    "NormalWeb"]
-
-let paraContainingParaStyleQuery = ".//w:p[w:pPr/w:pStyle]"
 let subQuery = "./w:pPr/w:pStyle/@w:val"
 
-
 let paraStyleQuery = ".//w:p/w:pPr/w:pStyle"
-
-let bookmarkBasedSecTitleQuery = ".//w:p[w:bookmarkStart and .//w:t ]"
 
 
 let paraContainingDoubtfulParaStyleQuery = 
     ".//w:p[w:pPr/w:pStyle/@w:val=\"50\"]"
-
-
-let createTitleElemList (doc: XDocument) mgr =
-    let secTitleList = doc.XPathSelectElements(paraContainingDoubtfulParaStyleQuery, mgr)
-    for secTitle in secTitleList do 
-        System.Console.WriteLine(secTitle.Value)
-
-let createTitleElemList2 (doc: XDocument) mgr sw =
-    let elemStrList = SecHeaderAndNumber.createTitleElemList doc mgr
-    for e,str in elemStrList do
-        let content = e.Value
-        fprintfn sw "%s %s" str content
 
 
 

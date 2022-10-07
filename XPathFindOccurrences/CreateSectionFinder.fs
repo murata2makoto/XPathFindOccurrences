@@ -1,6 +1,7 @@
 ﻿module CreateSectionFinder
 
 open System.Xml.Linq
+open SecTitle
 
 let createTitleElemList (doc: XDocument) mgr part1P =
     let mutable titleElemList: (List<XElement * string> ) = []
@@ -10,7 +11,7 @@ let createTitleElemList (doc: XDocument) mgr part1P =
         let printStr = getNumber topStackList
         titleElemList <- (e, printStr)::titleElemList 
 
-    SecTitle.scanSecTitles2 doc mgr (addAction (SecTitle.getNumber part1P))
+    scanSecTitles2 doc mgr (addAction (getNumber part1P))
     titleElemList |> List.rev
 
 let createSectionFinder titleElemList =

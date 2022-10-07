@@ -3,10 +3,9 @@
 module XPathFindOccurrences.Program
 
 open EnumerateParagraphsAndTableRows
-open FindPosition
+open NERGList
 open Toolkit
 open CreateSectionFinder
-open GetMarkerPosition
 open GetStartEndMarkerPairs
 open ForbiddenWords
 open System.IO
@@ -21,7 +20,7 @@ let readXPaths inputFileName =
         [while not(sr.EndOfStream) do 
             yield sr.ReadLine()]
     if xpaths.Length = 2 then xpaths
-    else failwith "Specify two XPath expressios"
+    else failwith "Specify two XPath expressions"
 
 
 let help2 (pairs: (string * 
@@ -34,8 +33,8 @@ let help2 (pairs: (string *
         "Start Marker Position" 
         "End Marker Position"  
         "Content"    
-    for (xpath, starElem, _ ,_ ,_ , contents) in pairs do 
-        let sectionNumber = finder starElem
+    for (xpath, startElem, _ ,_ ,_ , contents) in pairs do 
+        let sectionNumber = finder startElem
         let msp_mep_pairs = 
             getStartEndMarkerPairs xpath contents
         for (msp, mep) in msp_mep_pairs do
@@ -56,11 +55,10 @@ let main argv =
             let sectionFinder = 
                 createSectionFinder 
                     (createTitleElemList doc mgr part1P)
+            let nergList = 
+                extractNERGList xPaths doc mgr hash
             use sw = createTextWriteFromOutputFileName outputFileName
-            let pairs = 
-                findElementForXPaths1 xPaths doc mgr hash
-                |> createPairs  |> addContent 
-            help2 pairs sectionFinder sw 
+            help2 nergList sectionFinder sw 
             sw.Close()
             0
     | _ -> 

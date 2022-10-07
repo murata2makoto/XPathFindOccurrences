@@ -26,7 +26,6 @@ let getManager (doc: XDocument) =
     "http://schemas.openxmlformats.org/wordprocessingml/2006/main")
   manager
 
-
 let createTextWriteFromOutputFileName outputFileName = 
     let enc = new System.Text.UTF8Encoding(true)
     let ofs = new FileStream(outputFileName, FileMode.Create)

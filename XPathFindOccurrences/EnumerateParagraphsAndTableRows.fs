@@ -31,7 +31,7 @@ let private visitParagraph (e: XElement) nth (hash: Dictionary<_,_>) =
 let private visitTbl (e: XElement) nth (hash: Dictionary<_,_>) manager =
   let trs = e.XPathSelectElements(trQ, manager)
   trs |> Seq.iteri (fun i trElem -> 
-                    hash.[trElem] <- [i; nth])
+                    hash.[trElem] <- [nth; i])
 
 let createHashContainingParagarphsAndTableRows (doc: XDocument) manager =
   let hashtable = new Dictionary<XElement, int list>()
