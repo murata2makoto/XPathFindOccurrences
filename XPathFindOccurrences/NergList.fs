@@ -12,6 +12,7 @@ let private findPosition
         if hash.ContainsKey(a) then 
             countList <- hash.[a]
         else ()
+    if countList.Length = 0  then failwith "empty!"
     countList
 
 let private comparer 
@@ -42,7 +43,7 @@ let private findElementForXPaths
         mergesort1 comparer startMarkers endMarkers
     |_ -> failwith "hen"
  
-let mergeable (spl:int list) (epl:int list) = 
+let private mergeable (spl:int list) (epl:int list) = 
     match spl, epl with
     | [_], [_] -> true
     | [_; _], [_] -> printfn "Not mergable: %A %d" spl epl.Head ; false
@@ -50,7 +51,6 @@ let mergeable (spl:int list) (epl:int list) =
     | [x; _], [y; _] when x = y -> true
     | [x; _], [y; _] when x <> y -> printfn "Not mergable: %A %A" spl epl; false
     | _ -> failwith "hen"
-
 
 let private createPairs (l: (int*string* XElement * int list) list) = 
     let mutable (prevPindex, prevXpath, prevXelem, prevPosList) = 

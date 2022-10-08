@@ -9,6 +9,8 @@ let tblQ = "//w:body/w:tbl"
 let pQ = "//w:body/w:p"
 let sdtTblQ = "//w:body/w:sdt/w:sdtContent/w:tbl"
 let sdtPQ = "//w:body/w:sdt/w:sdtContent/w:p"
+let sdtSdtTblQ = "//w:body/w:sdt/w:sdtContent/w:sdt/w:sdtContent/w:tbl"
+let sdtSdtPQ = "//w:body/w:sdt/w:sdtContent/w:sdt/w:sdtContent/w:p"
 let trQ = "w:tr"
 
 let private pOrTbl (doc: XDocument) manager =
@@ -23,6 +25,8 @@ let private pOrTbl (doc: XDocument) manager =
   |> mergesort1 xElemComparer (find pQ)
   |> mergesort1 xElemComparer (find sdtTblQ)
   |> mergesort1 xElemComparer (find sdtPQ)
+  |> mergesort1 xElemComparer (find sdtSdtTblQ)
+  |> mergesort1 xElemComparer (find sdtSdtPQ)
 
 
 let private visitParagraph (e: XElement) nth (hash: Dictionary<_,_>) =
