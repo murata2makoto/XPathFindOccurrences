@@ -52,8 +52,6 @@ let getHeadingElementLevel mgr (e: XElement)   =
     | "Appendix2" -> 2
     | "Appendix3" -> 3
     | "Appendix4" -> 4
-    | "Appendix5" -> 5
-    | "Appendix6" -> 6
     | _ -> failwith "hen"
 
 let scanSecTitles2 (doc: XDocument) mgr action =
@@ -62,15 +60,15 @@ let scanSecTitles2 (doc: XDocument) mgr action =
     nest secTitleList (getHeadingElementLevel mgr) action
 
 
-let getNumber part1P (x : int list) =
+let getSubClauseNumber part1P (x : int list) =
     match List.rev x with 
     | clauseNumber::subClauseNumber ->
         let clauseString =
             if part1P then
-                if clauseNumber <= 23 then clauseNumber.ToString()
+                if clauseNumber <= 23 then clauseNumber.ToString() //Annex
                 else (char (65 + clauseNumber - 24)).ToString()
             else 
-                if clauseNumber <= 20 then clauseNumber.ToString()
+                if clauseNumber <= 20 then clauseNumber.ToString() //Annex
                 else (char (65 + clauseNumber - 21)).ToString()
         let subclauseString =
            List.fold 

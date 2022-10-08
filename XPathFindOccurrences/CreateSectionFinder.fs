@@ -11,7 +11,7 @@ let createTitleElemList (doc: XDocument) mgr part1P =
         let printStr = getNumber topStackList
         titleElemList <- (e, printStr)::titleElemList 
 
-    scanSecTitles2 doc mgr (addAction (getNumber part1P))
+    scanSecTitles2 doc mgr (addAction (getSubClauseNumber part1P))
     titleElemList |> List.rev
 
 let createSectionFinder titleElemList =
