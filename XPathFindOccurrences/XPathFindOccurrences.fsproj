@@ -11,7 +11,6 @@
     <Compile Include="TokenOrParenthesis.fs" />
     <Compile Include="SecTitle.fs" />
     <Compile Include="CreateSectionFinder.fs" />
-    <Compile Include="EnumerateParagraphsAndTableRows.fs" />
     <Compile Include="NERGList.fs" />
     <Compile Include="GetStartEndMarkerPairs.fs" />
     <Compile Include="ForbiddenWords.fs" />

@@ -2,7 +2,6 @@
 
 module XPathFindOccurrences.Program
 
-open EnumerateParagraphsAndTableRows
 open NERGList
 open Toolkit
 open CreateSectionFinder
@@ -24,8 +23,8 @@ let readXPaths inputFileName =
 
 
 let help2 (pairs: (string * 
-                    XElement * int list * 
-                    XElement * int list * seq<string>) list)
+                    XElement * 
+                    XElement * seq<string>) list)
           finder  sw  = 
     fprintfn sw "%s\t%s\t%s\t%s\t%s"
         "Subclasue number"
@@ -33,7 +32,7 @@ let help2 (pairs: (string *
         "Start Marker Position" 
         "End Marker Position"  
         "Content"    
-    for (xpath, startElem, _ ,_ ,_ , contents) in pairs do 
+    for (xpath, startElem, _ , contents) in pairs do 
         let sectionNumber = finder startElem
         let msp_mep_pairs = 
             getStartEndMarkerPairs xpath contents
@@ -51,12 +50,12 @@ let main argv =
             let doc = createXDocumentFromDocxFileName docXFileName
             let mgr = getManager doc
             let part1P = docXFileName.Contains("29500-1")
-            let hash = createHashContainingParagarphsAndTableRows doc mgr
+            //let hash = createHashContainingParagarphsAndTableRows doc mgr
             let sectionFinder = 
                 createSectionFinder 
                     (createTitleElemList doc mgr part1P)
             let nergList = 
-                extractNERGList xPaths doc mgr hash
+                extractNERGList xPaths doc mgr 
             use sw = createTextWriteFromOutputFileName outputFileName
             help2 nergList sectionFinder sw 
             sw.Close()
