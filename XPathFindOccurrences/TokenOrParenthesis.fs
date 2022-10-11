@@ -1,4 +1,4 @@
-﻿module TokenOrParenthesis
+﻿module XPathFindOccurrences.TokenOrParenthesis
 open System.Xml.Linq
 
 type TokenOrParenthesis<'a> =

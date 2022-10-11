@@ -1,4 +1,4 @@
-﻿module ForbiddenWords
+﻿module XPathFindOccurrences.ForbiddenWords
 
 let private ignoreCase = System.StringComparison.CurrentCultureIgnoreCase
 

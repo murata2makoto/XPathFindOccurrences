@@ -1,4 +1,4 @@
-﻿module SecTitle
+﻿module XPathFindOccurrences.SecTitle
 
 open System.Xml.XPath
 open System.Xml.Linq

@@ -1,4 +1,4 @@
-﻿module CreateSectionFinder
+﻿module XPathFindOccurrences.CreateSectionFinder
 
 open System.Xml.Linq
 open SecTitle

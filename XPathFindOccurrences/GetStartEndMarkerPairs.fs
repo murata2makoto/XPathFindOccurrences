@@ -1,4 +1,4 @@
-﻿module GetStartEndMarkerPairs
+﻿module XPathFindOccurrences.GetStartEndMarkerPairs
 
 let private ignoreCase = System.StringComparison.CurrentCultureIgnoreCase
 

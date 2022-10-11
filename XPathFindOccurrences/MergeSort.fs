@@ -1,4 +1,4 @@
-﻿module MergeSort
+﻿module XPathFindOccurrences.MergeSort
 
 let mergesort1 (comparer : 'a -> 'a -> int)
                 (l1: 'a list) (l2: 'a list) =

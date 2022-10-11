@@ -1,4 +1,5 @@
 ﻿module XPathFindOccurrences.NERGList
+//NERG stands for Notes, Examples, Rationales, and Guidances.
 
 open System.Collections.Generic
 open System.Xml.XPath
