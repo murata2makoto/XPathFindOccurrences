@@ -58,9 +58,13 @@ let help2 nerg (pairs: (string *
                     sectionNumber forbiddenWordsFlag xsdFlag msp mep
             else
                 fprintf sw "%s\t%b\t%d\t%d\t" sectionNumber forbiddenWordsFlag msp mep 
-            nergContents |> Seq.iter (fun cont -> fprintf sw "%s"  cont)
+            Seq.head nergContents |> fprintf sw "%s" 
+            for nergContent in Seq.tail nergContents do
+                fprintf sw " %s" nergContent
             fprintf sw "\t"
-            contents |> Seq.iter (fun cont -> fprintf sw "%s"  cont) 
+            Seq.head contents |> fprintf sw "%s" 
+            for content in Seq.tail contents do
+                fprintf sw " %s" content
             sw.WriteLine()
 
 let detectNerg (xpath: string) = 
