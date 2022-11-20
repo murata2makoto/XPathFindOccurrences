@@ -2,9 +2,10 @@
 
 open System.Xml.XPath
 open System.Xml.Linq
-open TokenOrParenthesis
 
 let wml = XNamespace.Get "http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+
+//すべてのヘッディングを得るためのXPath検索式
 
 let secTitleQuery = ".//w:p[
                   .//w:r and
@@ -33,6 +34,8 @@ let secTitleQuery = ".//w:p[
                   (w:pPr/w:pStyle/@w:val = \"Appendix4\"))
                   ]"
 
+//ヘッディングの深さ判定
+
 let getHeadingElementLevel mgr (e: XElement)   =
     let pStyle = e.XPathSelectElement("w:pPr/w:pStyle", mgr)
     let styleName = pStyle.Attribute(wml+"val").Value
@@ -54,14 +57,8 @@ let getHeadingElementLevel mgr (e: XElement)   =
     | "Appendix4" -> 4
     | _ -> failwith "hen"
 
-let scanSecTitles2 (doc: XDocument) mgr action =
-    let secTitleList = 
-        doc.XPathSelectElements(secTitleQuery, mgr)           
-    nest secTitleList (getHeadingElementLevel mgr) action
-
-
-let getSubClauseNumber part1P (x : int list) =
-    match List.rev x with 
+let getSubClauseNumber part1P (indexStack : int list): string =
+    match List.rev indexStack with 
     | clauseNumber::subClauseNumber ->
         let clauseString =
             if part1P then

@@ -1,11 +1,14 @@
 ﻿module XPathFindOccurrences.TokenOrParenthesis
 open System.Xml.Linq
 
+//Parenthesis grammarを用いて、フラットな列から階層構造を作り出す
+
 type TokenOrParenthesis<'a> =
     | Token of 'a
     | StartParenthesis
     | EndParenthesis
 
+//トークン列に、開き括弧、閉じ括弧を挿入する。getLevelで深さを判定
 let private tokenSeq2tokenOrParenthesisSeq (l: seq<'a>) getLevel = 
     seq{let mutable currentLevel = 0
         for e in l do
@@ -24,19 +27,17 @@ let private tokenSeq2tokenOrParenthesisSeq (l: seq<'a>) getLevel =
         for j = 1 to currentLevel do yield EndParenthesis
         }
 
+//actionは、各項目とその番号列（1.3.2を表す[2;3;1])を受け取る関数引数
 let nest (l: seq<'a>) getLevel action =
     let tpSeq = tokenSeq2tokenOrParenthesisSeq l getLevel
-    let mutable stackOfStacks = []
+    let mutable indexStack = []
     for tp in tpSeq do
         match tp with
         | Token(e) -> 
-            let (topStack: int list) = List.head stackOfStacks
-            let topStackNext = 
-                if topStack.IsEmpty then [1]
-                else (topStack.Head + 1)::topStack
-            stackOfStacks <- topStackNext::(List.tail stackOfStacks)
-            action e stackOfStacks
+            let stackTop = List.head indexStack
+            indexStack <- (stackTop + 1)::(List.tail indexStack)
+            action e indexStack
         | StartParenthesis -> 
-            stackOfStacks <- []::stackOfStacks
+            indexStack <- 0::indexStack
         | EndParenthesis -> 
-            stackOfStacks <- List.tail stackOfStacks
+            indexStack <- List.tail indexStack

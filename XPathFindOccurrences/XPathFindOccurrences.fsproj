@@ -5,9 +5,12 @@
     <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Tailcalls>True</Tailcalls>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Include="Toolkit.fs" />
-    <Compile Include="MergeSort.fs" />
     <Compile Include="TokenOrParenthesis.fs" />
     <Compile Include="SecTitle.fs" />
     <Compile Include="CreateSectionFinder.fs" />

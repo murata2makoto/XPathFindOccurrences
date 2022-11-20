@@ -2,22 +2,33 @@
 
 open System.Xml.Linq
 open SecTitle
+open System.Xml.XPath
+open TokenOrParenthesis
 
-let createTitleElemList (doc: XDocument) mgr part1P =
+let private createTitleElemList (doc: XDocument) mgr part1P =
     let mutable titleElemList: (List<XElement * string> ) = []
 
-    let addAction getNumber (e:XElement) (stackOfStack: int list list) =
-        let topStackList = List.map (fun l -> List.head l) stackOfStack
-        let printStr = getNumber topStackList
+    let addAction  (e:XElement) (stack: int list) =
+        let printStr = getSubClauseNumber part1P stack
         titleElemList <- (e, printStr)::titleElemList 
 
-    scanSecTitles2 doc mgr (addAction (getSubClauseNumber part1P))
+    let secTitleList = 
+        doc.XPathSelectElements(secTitleQuery, mgr) 
+        
+    nest secTitleList (getHeadingElementLevel mgr) addAction
+
     titleElemList |> List.rev
 
-let createSectionFinder titleElemList =
+let createSectionFinder (doc: XDocument) mgr part1P =
 //すべてのtitle elementから探すのではなく、前回見つけたもの以降しか探さない
 
-    let mutable titleElemList: (List<XElement * string> ) = titleElemList
+    let mutable titleElemList: (List<XElement * string> ) = 
+        createTitleElemList doc mgr part1P 
+
+    let mutable backupTitleElemList = titleElemList
+
+    let reset() = 
+        titleElemList <- backupTitleElemList
 
     let finder (p: XElement) =
         let mutable found = false
@@ -33,4 +44,4 @@ let createSectionFinder titleElemList =
         titleElemList <- previousHead::head::remaining
         snd previousHead
 
-    finder
+    (finder, reset)

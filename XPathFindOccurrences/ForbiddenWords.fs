@@ -8,8 +8,7 @@ let private help (str: string) =
     str.Contains("may",ignoreCase) ||
     str.Contains("is required to",ignoreCase)||
     str.Contains("are required to",ignoreCase)||
-    str.Contains("are ought to",ignoreCase)||
-    str.Contains("is ought to",ignoreCase)
+    str.Contains("ought to",ignoreCase)
 
 let hasForbiddenWords (nergContents: string seq) = 
     nergContents

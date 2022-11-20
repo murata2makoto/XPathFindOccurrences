@@ -4,12 +4,10 @@ open NERG
 let private ignoreCase = System.StringComparison.CurrentCultureIgnoreCase
 
 let private getAllIndexes (string: string) (substring: string) =
-    let help (startIndex: int) =
-        string.IndexOf(substring,startIndex)
     [let mutable startIndex = 0;
      let mutable flag = true;
      while flag do
-        let pos = help startIndex
+        let pos = string.IndexOf(substring,startIndex)
         if pos <> -1 then 
             yield pos
             startIndex <- pos + 1

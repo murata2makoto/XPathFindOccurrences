@@ -2,7 +2,6 @@
 
 module XPathFindOccurrences.Program
 
-let private ignoreCase = System.StringComparison.CurrentCultureIgnoreCase
 
 open NERG
 open NERGList
@@ -25,9 +24,8 @@ let readXPaths inputFileName =
     else failwith "Specify two XPath expressions"
 
 
-let help2 nerg (pairs: (string * 
-                    XElement * 
-                    XElement * seq<string>) list)
+let help2 nerg (xpath: string)  
+               (pairs: (XElement * XElement * seq<string>) list)
           finder  sw  = 
     if nerg = Note then
         fprintfn sw "%s\t%s\t%s\t%s\t%s\t%s\t%s"
@@ -46,7 +44,7 @@ let help2 nerg (pairs: (string *
             "End Marker Position"  
             "Content" 
             "Para Content" 
-    for (xpath, startElem, _ , contents) in pairs do 
+    for (startElem, _ , contents) in pairs do 
         let sectionNumber = finder startElem
         let msp_mep_content_triplets = 
             getStartEndMarkerPairs nerg xpath contents
@@ -67,12 +65,7 @@ let help2 nerg (pairs: (string *
                 fprintf sw " %s" content
             sw.WriteLine()
 
-let detectNerg (xpath: string) = 
-    if xpath.Contains("Example",ignoreCase) then Example
-    elif xpath.Contains("Note", ignoreCase) then Note
-    elif xpath.Contains("Guidance", ignoreCase) then Guidance
-    elif xpath.Contains("Rationale", ignoreCase) then Rationale
-    else failwith "unrecognized nerg"
+
 
 [<EntryPoint>]
 let main argv =
@@ -83,13 +76,13 @@ let main argv =
             let mgr = getManager doc
             let part1P = docXFileName.Contains("29500-1")
             let nerg = xPaths.Head |> detectNerg 
-            let sectionFinder = 
-                createSectionFinder 
-                    (createTitleElemList doc mgr part1P)
+            let sectionFinder, resetSectionFinder = 
+                createSectionFinder  doc mgr part1P
             let nergList = 
-                extractNERGList xPaths doc mgr 
+                extractNERGList xPaths doc mgr sectionFinder
             use sw = createTextWriteFromOutputFileName outputFileName
-            help2 nerg nergList sectionFinder sw 
+            resetSectionFinder()
+            help2 nerg (xPaths.Head) nergList sectionFinder sw 
             sw.Close()
             0
     | _ -> 
