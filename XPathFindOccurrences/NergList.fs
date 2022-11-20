@@ -44,7 +44,9 @@ let private createPairs2 sectionFinder
             revList
         | stMarker::startMarkerTail, edMarker::endMarkerTail ->
             if mergeable1 stMarker edMarker then
-                help startMarkerTail endMarkerTail ((stMarker, edMarker)::revList)
+                help startMarkerTail
+                    endMarkerTail 
+                    ((stMarker, edMarker)::revList)
             elif stMarker.IsBefore(edMarker) then //skip stMarker
                 let secNum = sectionFinder stMarker
                 printfn "Skipped: %s %s" secNum stMarker.Value
