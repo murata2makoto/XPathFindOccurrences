@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "TitleCasing": {
+      "commandName": "Project",
+      "commandLineArgs": "\"29500-1 WD 6.1.docx\" \"29500-1 WD 6.1R.docx\"",
+      "workingDirectory": "c:\\Users\\eb2m-\\OneDrive\\WG4"
+    },
+    "TitleCasing4": {
+      "commandName": "Project",
+      "commandLineArgs": "\"29500-4 WD 6.1.docx\" \"29500-4 WD 6.1R.docx\"",
+      "workingDirectory": "c:\\Users\\eb2m-\\OneDrive\\WG4"
+    }
+  }
+}
