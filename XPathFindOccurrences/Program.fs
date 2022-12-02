@@ -5,23 +5,14 @@ module XPathFindOccurrences.Program
 
 open NERG
 open NERGList
-open Toolkit
 open CreateSectionFinder
 open GetStartEndMarkerPairs
 open ForbiddenWords
 open DetectXsd
 open System.IO
 open System.Xml.Linq
+open OOXML.Toolkit
 
-let readXPaths inputFileName = 
-    let enc = new System.Text.UTF8Encoding(true)
-    let ifs = new FileStream(inputFileName, FileMode.Open)
-    let sr = new StreamReader(ifs, enc)
-    let xpaths =
-        [while not(sr.EndOfStream) do 
-            yield sr.ReadLine()]
-    if xpaths.Length = 2 then xpaths
-    else failwith "Specify two XPath expressions"
 
 
 let help2 nerg (xpath: string)  

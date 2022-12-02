@@ -10,7 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Toolkit.fs" />
     <Compile Include="TokenOrParenthesis.fs" />
     <Compile Include="SecTitle.fs" />
     <Compile Include="CreateSectionFinder.fs" />
@@ -23,11 +22,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="CsvHelper" Version="29.0.0" />
+    <PackageReference Include="CsvHelper" Version="30.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="FSharp.Core" Version="6.0.6" />
+    <ProjectReference Include="..\Toolkit\Toolkit.fsproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="7.0.0" />
   </ItemGroup>
 
 </Project>

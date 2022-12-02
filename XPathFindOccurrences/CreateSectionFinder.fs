@@ -35,13 +35,20 @@ let createSectionFinder (doc: XDocument) mgr part1P =
         let mutable previousHead = (null, "")
         let mutable head = List.head titleElemList
         let mutable remaining = List.tail titleElemList
+        let mutable reachedEnd = false
         while not(found) do
             if (fst head).IsAfter(p) then found <- true
+            elif remaining.IsEmpty then
+                reachedEnd <- true
+                found <- true
             else
                 previousHead <- head
                 head <- List.head remaining
                 remaining <- List.tail remaining
-        titleElemList <- previousHead::head::remaining
+        if not reachedEnd && snd previousHead <> "" then
+            titleElemList <- previousHead::head::remaining
+        
+        if reachedEnd then "Bibliography" else
         snd previousHead
 
     (finder, reset)

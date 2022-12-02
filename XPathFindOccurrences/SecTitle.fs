@@ -31,8 +31,12 @@ let secTitleQuery = ".//w:p[
                   or
                   (w:pPr/w:pStyle/@w:val = \"Appendix3\")
                   or
-                  (w:pPr/w:pStyle/@w:val = \"Appendix4\"))
+                  (w:pPr/w:pStyle/@w:val = \"Appendix4\")
+                  )
                   ]"
+
+//                  or
+//                  (w:pPr/w:pStyle/@w:val = \"UnnumberedHeading\")
 
 //ヘッディングの深さ判定
 
@@ -51,10 +55,12 @@ let getHeadingElementLevel mgr (e: XElement)   =
     | "Heading2" -> 2
     | "Heading3" -> 3
     | "Heading4" -> 4
+    | "Heading5" -> 5
     | "Appendix1" -> 1
     | "Appendix2" -> 2
     | "Appendix3" -> 3
     | "Appendix4" -> 4
+ //   | "UnnumberedHeading" -> 1
     | _ -> failwith "hen"
 
 let getSubClauseNumber part1P (indexStack : int list): string =
