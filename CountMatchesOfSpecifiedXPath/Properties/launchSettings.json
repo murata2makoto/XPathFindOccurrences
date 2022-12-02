@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "CountMatchesOfSpecifiedXPath": {
+      "commandName": "Project",
+      "commandLineArgs": "29500-1-WD5.0.docx paraXPaths.txt ",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive\\WG4"
+    }
+  }
+}
