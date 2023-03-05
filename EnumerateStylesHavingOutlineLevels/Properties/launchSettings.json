@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "EnumerateStylesHavingOutlineLevels": {
+      "commandName": "Project",
+      "commandLineArgs": "\"29500-1 WD 6.1.docx\"",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive\\WG4"
+    }
+  }
+}
