@@ -6,11 +6,11 @@ open System.Xml.Linq
 open System.IO
 open System.IO.Compression
 
-let createXDocumentFromDocxFileName docxFileName: XDocument = 
+let createXDocumentFromDocxFileName docxFileName partName : XDocument = 
     let directory = 
         System.Environment.GetEnvironmentVariable("TEMP")+"\\ooxml"
     let documentXml =
-        directory + "\\word\\document.xml"
+        directory + partName //"\\word\\document.xml"
     try
         Directory.Delete(directory, true)
     with 

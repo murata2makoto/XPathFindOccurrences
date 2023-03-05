@@ -64,6 +64,7 @@ let main argv =
     | [| xPathsFileName; docXFileName; outputFileName |] ->
             let xPaths = readXPaths xPathsFileName
             let doc = createXDocumentFromDocxFileName docXFileName
+                        "\\word\\document.xml"
             let mgr = getManager doc
             let part1P = docXFileName.Contains("29500-1")
             let nerg = xPaths.Head |> detectNerg 

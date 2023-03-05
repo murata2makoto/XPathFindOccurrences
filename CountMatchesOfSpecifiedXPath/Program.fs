@@ -19,7 +19,8 @@ let printResult (xPath: string) matches =
 let main argv =
     match argv with
     | [| docXFileName; xPathsFileName|] ->
-            let doc = createXDocumentFromDocxFileName docXFileName
+            let doc = createXDocumentFromDocxFileName docXFileName 
+                        "\\word\\document.xml"
             let mgr = getManager doc
             let xPaths = readXPaths xPathsFileName
             printfn "%s" docXFileName

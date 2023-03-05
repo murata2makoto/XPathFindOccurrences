@@ -40,17 +40,17 @@ let unReplaceKeyWords str =
     |> List.fold 
         (fun (x: string) (oldS, newS) ->  x.Replace(oldS, newS)) str
 
-
-[<EntryPoint>]
-let main argv =
+let main1 argv =
     match argv with
     | [| docXFileName; outputFileName |] ->
         let doc = createXDocumentFromDocxFileName docXFileName
+                        "\\word\\document.xml"
         let mgr = getManager doc
         let secTitleList = 
             doc.XPathSelectElements(secTitleQuery, mgr) 
         for secTitle in secTitleList do
             let WRs = secTitle.XPathSelectElements(toBeHandledXPath, mgr)
+            for wr in WRs do 
             if WRs |> Seq.length = 1 then
                 let wr = WRs |> Seq.head
                 let content = wr.Value
@@ -59,6 +59,30 @@ let main argv =
                 |>(fun newContent ->
                     let newXText= new XText(newContent)
                     wr.ReplaceNodes([newXText]))
+        createDocXFromXDocument doc outputFileName
+        0
+    | _ -> 
+        printfn "Illegal parameter %A" argv
+        1
+
+[<EntryPoint>]
+let main argv =
+    match argv with
+    | [| docXFileName; outputFileName |] ->
+        let doc = createXDocumentFromDocxFileName docXFileName
+                        "\\word\\document.xml"
+        let mgr = getManager doc
+        let secTitleList = 
+            doc.XPathSelectElements(secTitleQuery, mgr) 
+        for secTitle in secTitleList do
+            let WRs = secTitle.XPathSelectElements(toBeHandledXPath, mgr)
+            let mutable firstFlag = true
+            for wr in WRs do 
+                let content = wr.Value
+                let newContent = sentenceCasing content firstFlag
+                firstFlag <- false
+                let newXText= new XText(newContent)
+                wr.ReplaceNodes([newXText])
         createDocXFromXDocument doc outputFileName
         0
     | _ -> 

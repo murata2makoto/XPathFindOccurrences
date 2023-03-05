@@ -31,6 +31,7 @@ let main argv =
     match argv with
     | [| docXFileName; outputFileName |] ->
             let doc = createXDocumentFromDocxFileName docXFileName
+                        "\\word\\document.xml"
             let part1P = docXFileName.Contains("29500-1")
             let mgr = getManager doc
             let sectionFinder, resetSectionFinder = 
