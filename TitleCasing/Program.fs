@@ -4,6 +4,7 @@ open XPathFindOccurrences.SecTitle
 
 open System.Xml.XPath
 open System.Xml.Linq
+open System.Text.RegularExpressions
 
 let titleWR = 
     "/w:r[count(*) = 1]/w:t[count(*) = 0]"
@@ -15,6 +16,30 @@ let toBeEliminatedXPath =
   "w:r[(w:fldChar or w:instrText) and count(*) = 1]" 
 
 let styleQuery = "w:pPr/w:pStyle/@w:val"
+
+let rec sentenceCasing str firstFlag =
+    let m = Regex.Match(str, @"\b\w+\b")
+    if m.Success then
+        let index = m.Index
+        let length = m.Length
+        let subStr = str.Substring(index, length)
+        let startStr = subStr.Substring(0,1)
+        let remainder = subStr.Substring(1)
+        if remainder = remainder.ToLower() then //二文字目以降に大文字はない
+          if not(firstFlag) then 
+            let newSubStr = startStr.ToLower() + remainder
+            str.Substring(0, index) 
+            + newSubStr 
+            + sentenceCasing (str.Substring(index + length)) false 
+          else 
+            str.Substring(0, index) 
+            + subStr 
+            + sentenceCasing (str.Substring(index + length)) false
+        else
+          str.Substring(0, index) + subStr 
+          + sentenceCasing (str.Substring(index + length)) false
+    else 
+        str
 
 let unReplaceKeyWords str =
     let (pairs: (string*string) list) = 
