@@ -43,7 +43,7 @@ let getStartEndMarkerPairs nerg (xpath: string) (contents: seq<string>) =
                                 )
     match nerg with 
     | Example ->
-        help "[Example:" "end example]" 12
+        help "EXAMPLE" "END OF EXAMPLE" 14
     | Note ->
         help "[Note:" "end note]" 9
     | Guidance ->

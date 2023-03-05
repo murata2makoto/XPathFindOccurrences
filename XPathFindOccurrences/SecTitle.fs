@@ -32,6 +32,10 @@ let secTitleQuery = ".//w:p[
                   (w:pPr/w:pStyle/@w:val = \"Appendix3\")
                   or
                   (w:pPr/w:pStyle/@w:val = \"Appendix4\")
+                  or
+                  (w:pPr/w:pStyle/@w:val = \"Appendix5\")
+                  or
+                  (w:pPr/w:pStyle/@w:val = \"Appendix6\")
                   )
                   ]"
 
@@ -56,10 +60,14 @@ let getHeadingElementLevel mgr (e: XElement)   =
     | "Heading3" -> 3
     | "Heading4" -> 4
     | "Heading5" -> 5
+    | "Heading6" -> 6
     | "Appendix1" -> 1
     | "Appendix2" -> 2
     | "Appendix3" -> 3
     | "Appendix4" -> 4
+    | "Appendix5" -> 5
+    | "Appendix6" -> 6
+    | "Appendix7" -> 7
  //   | "UnnumberedHeading" -> 1
     | _ -> failwith "hen"
 
