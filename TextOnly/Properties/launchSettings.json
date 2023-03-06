@@ -7,7 +7,7 @@
     },
     "TextOnly1": {
       "commandName": "Project",
-      "commandLineArgs": "\"Shared\\Drafting rules and waiver\\Style changes work area\\Handback\\29500-1 WD 6.1R-2023-02-03.docx\" \"Shared\\Drafting rules and waiver\\Style changes work area\\Support files\\29500-1 WD 6.1R-2023-02-03.tsv\"",
+      "commandLineArgs": "\"WG4\\29500-1 WD 6.1R-2023-03-04.docx\" \"Shared\\Drafting rules and waiver\\Style changes work area\\Support files\\29500-1 WD 6.1R-2023-03-04.tsv\"",
       "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
     }
   }
