@@ -14,7 +14,8 @@ let private getAllIndexes (string: string) (substring: string) =
         else flag <- false]
 
 let getStartEndMarkerPairs nerg (xpath: string) (contents: seq<string>) = 
-    let help startMarker endMarker endMarkerLength =
+    let help startMarker endMarker  =
+        let endMarkerLength = String.length endMarker
         let startMarkers = 
             getAllIndexes (Seq.head contents) startMarker
         let endMarkers =
@@ -42,11 +43,13 @@ let getStartEndMarkerPairs nerg (xpath: string) (contents: seq<string>) =
                             |> (fun z -> x, y, z)
                                 )
     match nerg with 
+    | ExampleBlock ->
+        help "EXAMPLE" "END OF EXAMPLE" 
     | Example ->
-        help "EXAMPLE" "END OF EXAMPLE" 14
+        help "[Example:" "end example]"
     | Note ->
-        help "[Note:" "end note]" 9
+        help "[Note:" "end note]"
     | Guidance ->
-        help "[Guidance:" "end guidance]" 13
+        help "[Guidance:" "end guidance]"
     | Rationale ->
-        help "[Rationale:" "end rationale]" 14
+        help "[Rationale:" "end rationale]"
