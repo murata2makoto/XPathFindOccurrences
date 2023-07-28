@@ -11,9 +11,7 @@ open ForbiddenWords
 open DetectXsd
 open System.IO
 open System.Xml.Linq
-open OOXML.Toolkit
-
-
+open Toolkit.ReadWrite
 
 let help2 nerg (xpath: string)  
                (pairs: (XElement * XElement * seq<string>) list)

@@ -2,7 +2,37 @@
   "profiles": {
     "CountMatchesOfSpecifiedXPath": {
       "commandName": "Project",
-      "commandLineArgs": "29500-1-WD5.0.docx paraXPaths.txt ",
+      "commandLineArgs": "\"J:\\29500-1 WD 6.1R-2023-04-26.docx\" paraXPaths.txt ",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive\\WG4"
+    },
+    "CountMatchesOfSpecifiedXPath4": {
+      "commandName": "Project",
+      "commandLineArgs": "\"J:\\29500-4 WD 6.1R - 2023-04-27.docx\" paraXPaths.txt ",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive\\WG4"
+    },
+    "CountWMLDrawings": {
+      "commandName": "Project",
+      "commandLineArgs": "\"J:\\29500-1 WD 6.1R-2023-04-26.docx\" WMLDrawingsXPath.txt ",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive\\WG4"
+    },
+    "CountWMLDrawings4": {
+      "commandName": "Project",
+      "commandLineArgs": "\"J:\\29500-4 WD 6.1R - 2023-04-27.docx\" WMLDrawingsXPath.txt ",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive\\WG4"
+    },
+    "CountTables": {
+      "commandName": "Project",
+      "commandLineArgs": "\"J:\\29500-1 WD 6.1R-2023-05-26.docx\" TableXPaths.txt ",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive\\WG4"
+    },
+    "CountTables4": {
+      "commandName": "Project",
+      "commandLineArgs": "\"J:\\29500-4 WD 6.1R - 2023-05-18.docx\" TableXPaths.txt ",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive\\WG4"
+    },
+    "プロファイル 1": {
+      "commandName": "Project",
+      "commandLineArgs": "\"J:\\29500-1 WD 6.1R-2023-05-26.docx\"",
       "workingDirectory": "C:\\Users\\eb2m-\\OneDrive\\WG4"
     }
   }

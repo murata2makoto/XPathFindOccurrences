@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="TokenOrParenthesis.fs" />
+    <Compile Include="TreeAndHedge.fs" />
+    <Compile Include="CreateTokenOrParenthesisSeq.fs" />
+    <Compile Include="CreateHedge.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+</Project>

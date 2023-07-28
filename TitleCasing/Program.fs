@@ -1,6 +1,6 @@
 ﻿// For more information see https://aka.ms/fsharp-console-apps
-open OOXML.Toolkit
-open XPathFindOccurrences.SecTitle
+open Toolkit.ReadWrite
+open Toolkit.SecTitle
 
 open System.Xml.XPath
 open System.Xml.Linq
@@ -84,7 +84,7 @@ let main1 argv =
                 |>(fun newContent ->
                     let newXText= new XText(newContent)
                     wr.ReplaceNodes([newXText]))
-        createDocXFromXDocument doc outputFileName
+        createDocXFromXDocument outputFileName "\\word\\document.xml" doc
         0
     | _ -> 
         printfn "Illegal parameter %A" argv
@@ -108,7 +108,7 @@ let main argv =
                 firstFlag <- false
                 let newXText= new XText(newContent)
                 wr.ReplaceNodes([newXText])
-        createDocXFromXDocument doc outputFileName
+        createDocXFromXDocument outputFileName "\\word\\document.xml" doc
         0
     | _ -> 
         printfn "Illegal parameter %A" argv

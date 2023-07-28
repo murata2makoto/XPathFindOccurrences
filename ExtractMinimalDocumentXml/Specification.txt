@@ -1,0 +1,53 @@
+﻿基本的な考え方
+
+図のほう
+bodyの下にあるものは、節見出しと図はキープする。表は下記の通り。他は削除。
+図を含まない属性表は削除する。
+図を含む属性表はキープするが図以外の内容は消す。(unwrapは面倒だからやらない)
+図を含まない表は削除。
+図を含む表はキープするが図以外の内容は消す。
+
+表の方
+bodyの下にあるものは、節見出しと表（属性表でないもの）はキープする。属性表は下記の通り。他は削除。
+属性表で表を含まないものは削除する。
+属性表で表を含むものはキープする。
+属性表の中の表以外の内容は消す。(unwrapは面倒だからやらない)
+
+					table			figure
+figure				delete			keep
+table without fig	keep			delete
+table with fig		keep			keep　//tableの簡略化はする？
+atable/w:tr/w:tc	unwrap			unwrap
+
+sdt/sdtContent		unwrap			unwrap
+table-wo-fig table	keep parent		-
+table-w-fig table	keep parent		delete
+table figure		keep parent		-
+table table figure	keep parent		-
+atable table		keep			delete
+atable figure		delete			keep
+atable other		delete			delete
+atable table figure	keep parent		keep table
+atable table other  keep parent
+
+defaultを使いたいところ
+table
+　tableの中にある大体のものをkeep(figureも含む)する
+  bodyの下にある
+figure
+  figureの中にある大体のものをkeepする
+
+
+
+table
+tableをkeepしdefaultKeep
+atableはunwrapしdefaultDelete
+tableの中にあるfigureはkeep (default)
+figureはdelete(default)
+
+
+figure
+figureをkeepしdefaultKeep
+figureを含むtableをkeep
+
+tableはdelete(default)

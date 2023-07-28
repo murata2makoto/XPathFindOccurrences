@@ -6,7 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Toolkit.fs" />
+    <Compile Include="OOXMLNamespaces.fs" />
+    <Compile Include="SecTitle.fs" />
+    <Compile Include="ReadWrite.fs" />
   </ItemGroup>
 
   <ItemGroup>

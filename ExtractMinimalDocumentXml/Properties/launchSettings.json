@@ -1,0 +1,44 @@
+{
+  "profiles": {
+    "1 WD 6.1R 07-12 Table": {
+      "commandName": "Project",
+      "commandLineArgs": "\"J:\\29500-1 WD 6.1R-2023-07-12.docx\" table \"J:\\29500-1 WD 6.1R-2023-07-12TableMini.docx\"  \"J:\\29500-1 WD 6.1R-2023-07-12TableMini.tsv\"",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
+    },
+    "1 WD 6.1R 07-12 Figure": {
+      "commandName": "Project",
+      "commandLineArgs": "\"J:\\29500-1 WD 6.1R-2023-07-12.docx\" figure \"J:\\29500-1 WD 6.1R-2023-07-12FigureMini.docx\" \"J:\\29500-1 WD 6.1R-2023-07-12FigureMini.tsv\"",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
+    },
+    "4 WD 7.0 Table": {
+      "commandName": "Project",
+      "commandLineArgs": "\"J:\\29500-4 WD 7.0 - 2023-07-12.docx\" table \"J:\\29500-4 WD 7.0 - 2023-07-12TableMini.docx\" \"J:\\29500-4 WD 7.0 - 2023-07-12TableMini.tsv\"",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
+    },
+    "4 WD 7.0 Figure": {
+      "commandName": "Project",
+      "commandLineArgs": "\"J:\\29500-4 WD 7.0 - 2023-07-12.docx\" figure \"J:\\29500-4 WD 7.0 - 2023-07-12FigureMini.docx\" \"J:\\29500-4 WD 7.0 - 2023-07-12FigureMini.tsv\"",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
+    },
+    "05-26 Table": {
+      "commandName": "Project",
+      "commandLineArgs": "\"J:\\29500-1 WD 6.1R-2023-05-26.docx\" table \"J:\\29500-1 WD 6.1R-2023-05-26TableMini.docx\"",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
+    },
+    "05-26 Figure": {
+      "commandName": "Project",
+      "commandLineArgs": "\"J:\\29500-1 WD 6.1R-2023-05-26.docx\" figure \"J:\\29500-1 WD 6.1R-2023-05-26FigureMini.docx\"",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
+    },
+    "05-18 Table": {
+      "commandName": "Project",
+      "commandLineArgs": "\"J:\\29500-4 WD 6.1R - 2023-05-18.docx\" table \"J:\\29500-4 WD 6.1R - 2023-05-18TableMini.docx\"",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
+    },
+    "05-18 Figure": {
+      "commandName": "Project",
+      "commandLineArgs": "\"J:\\29500-4 WD 6.1R - 2023-05-18.docx\" figure \"J:\\29500-4 WD 6.1R - 2023-05-18FigureMini.docx\"",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
+    }
+  }
+}

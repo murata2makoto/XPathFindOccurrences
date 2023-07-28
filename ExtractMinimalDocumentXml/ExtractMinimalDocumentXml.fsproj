@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Specification.txt" />
+    <Compile Include="KeepUnwrapDelete.fs" />
+    <Compile Include="UnwrapSdt.fs" />
+    <Compile Include="共通XPath定義.fs" />
+    <Compile Include="消したいものを消す.fs" />
+    <Compile Include="UDK.fs" />
+    <Compile Include="CreateCsv.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Toolkit\Toolkit.fsproj" />
+    <ProjectReference Include="..\XPathFindOccurrences\XPathFindOccurrences.fsproj" />
+  </ItemGroup>
+
+</Project>

@@ -2,13 +2,13 @@
   "profiles": {
     "GetHangingParagraphs": {
       "commandName": "Project",
-      "commandLineArgs": "\"29500-1 WD 6.1.tsv\" \"29500-1 WD 6.1 Hanging Paragraphs.tsv\"",
-      "workingDirectory": "c:\\Users\\eb2m-\\OneDrive\\WG4"
+      "commandLineArgs": "\"Shared\\Drafting rules and waiver\\Style changes work area\\Support files\\29500-1 WD 6.1R-2023-07-12.tsv\" \"Shared\\Drafting rules and waiver\\Style changes work area\\Support files\\29500-1 WD 6.1R-2023-07-12 Hanging Paragraphs.tsv\"",
+      "workingDirectory": "c:\\Users\\eb2m-\\OneDrive"
     },
     "GetHangingParagraphs4": {
       "commandName": "Project",
-      "commandLineArgs": "\"29500-4 WD 6.1.tsv\" \"29500-4 WD 6.1 Hanging Paragraphs.tsv\"",
-      "workingDirectory": "c:\\Users\\eb2m-\\OneDrive\\WG4"
+      "commandLineArgs": "\"Shared\\Drafting rules and waiver\\Style changes work area\\Support files\\29500-4 WD 7.0 - 2023-07-12.tsv\" \"Shared\\Drafting rules and waiver\\Style changes work area\\Support files\\29500-4 WD 7.0 - 2023-07-12 Hanging Paragraphs.tsv\"",
+      "workingDirectory": "c:\\Users\\eb2m-\\OneDrive"
     }
   }
 }

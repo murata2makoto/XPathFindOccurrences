@@ -47,6 +47,8 @@ let getStartEndMarkerPairs nerg (xpath: string) (contents: seq<string>) =
         help "EXAMPLE" "END OF EXAMPLE" 
     | Example ->
         help "[Example:" "end example]"
+    | NoteBlock ->
+        help "Note" "END OF NOTE]"
     | Note ->
         help "[Note:" "end note]"
     | Guidance ->

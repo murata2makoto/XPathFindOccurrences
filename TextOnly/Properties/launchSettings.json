@@ -2,12 +2,12 @@
   "profiles": {
     "TextOnly4": {
       "commandName": "Project",
-      "commandLineArgs": "\"Shared\\Drafting rules and waiver\\Style changes work area\\Handback\\29500-4 WD 6.1R - 2023-02-27 FC.docx\" \"Shared\\Drafting rules and waiver\\Style changes work area\\Support files\\29500-4 WD 6.1R - 2023-02-27 FC.tsv\"",
+      "commandLineArgs": "\"J:\\29500-4 WD 7.0 - 2023-07-12.docx\" \"Shared\\Drafting rules and waiver\\Style changes work area\\Support files\\29500-4 WD 7.0 - 2023-07-12.tsv\"",
       "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
     },
     "TextOnly1": {
       "commandName": "Project",
-      "commandLineArgs": "\"WG4\\29500-1 WD 6.1R-2023-03-04.docx\" \"Shared\\Drafting rules and waiver\\Style changes work area\\Support files\\29500-1 WD 6.1R-2023-03-04.tsv\"",
+      "commandLineArgs": "\"J:\\29500-1 WD 6.1R-2023-07-12.docx\" \"Shared\\Drafting rules and waiver\\Style changes work area\\Support files\\29500-1 WD 6.1R-2023-07-12.tsv\"",
       "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
     }
   }

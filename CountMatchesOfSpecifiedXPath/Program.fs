@@ -1,4 +1,4 @@
-﻿open OOXML.Toolkit
+﻿open Toolkit.ReadWrite
 open System.Xml
 open System.Xml.Linq
 open System.Xml.XPath
@@ -27,6 +27,20 @@ let main argv =
             for xPath in xPaths do
                 let matches = doc.XPathSelectElements(xPath, mgr)
                 printResult xPath matches
+            0
+    | [| docXFileName|] ->
+            let doc = createXDocumentFromDocxFileName docXFileName 
+                        "\\word\\document.xml"
+            let mgr = getManager doc
+            printfn "%s" docXFileName
+            let mutable xPath = System.Console.ReadLine()
+            while (xPath.Trim() <> "") do
+                try
+                    let matches = doc.XPathSelectElements(xPath, mgr)
+                    printResult xPath matches
+                with :? System.Xml.XPath.XPathException as e -> 
+                    printfn "%s" e.Message
+                xPath <- System.Console.ReadLine()
             0
     | _ -> 
         printfn "Illegal parameter %A" argv

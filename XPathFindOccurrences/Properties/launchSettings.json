@@ -2,63 +2,104 @@
   "profiles": {
     "note4": {
       "commandName": "Project",
-      "commandLineArgs": "\"WG4\\noteXPaths.txt\" \"WG4\\29500-4 WD 6.1R - 2023-02-27 FC.docx\" \"WG4\\StatsOfNotesAndExamples\\Notes Part 4 WD 6.1R - 2023-02-27 FC.txt\"",
+      "commandLineArgs": "\"WG4\\noteXPaths.txt\" \"j:\\29500-4 WD 6.1R - 2023-06-30.docx\" \"WG4\\StatsOfNotesAndExamples\\Notes Part 4 WD 6.1R - 2023-06-30.txt\"",
       "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
     },
     "note1": {
       "commandName": "Project",
-      "commandLineArgs": "\"WG4\\noteXPaths.txt\" \"WG4\\29500-1 WD 6.1R-2023-03-04.docx\" \"WG4\\StatsOfNotesAndExamples\\Notes Part 1 WD 6.1R-2023-03-04.tsv\"",
+      "commandLineArgs": "\"WG4\\noteXPaths.txt\" \"j:\\29500-1 WD 6.1R-2023-06-16.docx\" \"WG4\\StatsOfNotesAndExamples\\Notes Part 1 WD 6.1R-2023-06-16.txt\"",
       "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
     },
     "example1": {
       "commandName": "Project",
-      "commandLineArgs": "\"WG4\\exampleXPaths.txt\" \"WG4\\29500-1 WD 6.1R-2023-03-04.docx\" \"WG4\\StatsOfNotesAndExamples\\Examples Part 1 WD 6.1R-2023-03-04.tsv\"",
+      "commandLineArgs": "\"WG4\\exampleXPaths.txt\" \"j:\\29500-1 WD 6.1R-2023-05-09.docx\" \"WG4\\StatsOfNotesAndExamples\\Examples Part 1 WD 6.1R-2023-05-09.txt\"",
       "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
     },
     "example4": {
       "commandName": "Project",
-      "commandLineArgs": "\"WG4\\exampleXPaths.txt\" \"WG4\\29500-4 WD 6.1R - 2023-02-27 FC.docx\" \"WG4\\StatsOfNotesAndExamples\\Examples Part 4 WD 6.1R - 2023-02-27 FC.txt\"",
+      "commandLineArgs": "\"WG4\\exampleXPaths.txt\" \"j:\\29500-4 WD 6.1R - 2023-05-10.docx\" \"WG4\\StatsOfNotesAndExamples\\Examples Part 4 6.1R - 2023-05-10.txt\"",
       "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
     },
     "guidance1": {
       "commandName": "Project",
-      "commandLineArgs": "\"WG4\\guidanceXPaths.txt\" \"WG4\\29500-1 WD 6.1R-2023-03-04.docx\" \"WG4\\StatsOfNotesAndExamples\\Guidances Part 1 WD 6.1R-2023-03-04.tsv\"",
+      "commandLineArgs": "\"WG4\\guidanceXPaths.txt\" \"j:\\29500-1 WD 6.1R-2023-05-09.docx\" \"WG4\\StatsOfNotesAndExamples\\Guidances Part 1 WD 6.1R-2023-05-09.txt\"",
       "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
     },
     "rationale1": {
       "commandName": "Project",
-      "commandLineArgs": "\"WG4\\rationaleXPaths.txt\" \"WG4\\29500-1 WD 6.1R-2023-03-04.docx\" \"WG4\\StatsOfNotesAndExamples\\Rationales Part 1 WD 6.1R-2023-03-04.tsv\"",
+      "commandLineArgs": "\"WG4\\rationaleXPaths.txt\" \"j:\\29500-1 WD 6.1R-2023-05-09.docx\" \"WG4\\StatsOfNotesAndExamples\\Rationales Part 1 WD 6.1R-2023-05-09.txt\"",
       "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
     },
     "rationale4": {
       "commandName": "Project",
-      "commandLineArgs": "\"WG4\\rationaleXPaths.txt\" \"WG4\\29500-4 WD 6.1R - 2023-02-27 FC.docx\" \"WG4\\StatsOfNotesAndExamples\\Rationales Part 4 WD 6.1R - 2023-02-27 FC.txt\"",
+      "commandLineArgs": "\"WG4\\rationaleXPaths.txt\" \"j:\\29500-4 WD 6.1R - 2023-05-10.docx\" \"WG4\\StatsOfNotesAndExamples\\Rationales Part 4 WD 6.1R - 2023-05-10.txt\"",
       "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
     },
     "guidance4": {
       "commandName": "Project",
-      "commandLineArgs": "\"WG4\\guidanceXPaths.txt\" \"WG4\\29500-4 WD 6.1R - 2023-02-27 FC.docx\" \"WG4\\StatsOfNotesAndExamples\\Guidances Part 4 WD 6.1R - 2023-02-27 FC.txt\"",
-      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
-    },
-    "プロファイル 1": {
-      "commandName": "Project",
-      "commandLineArgs": " \"WG4\\noteXPaths.txt\" \"Shared\\Drafting rules and waiver\\Style changes work area\\Handback\\Older Handbacks\\29500-4 WD 6.1R - 2022-12-13.docx\"  \"WG4\\StatsOfNotesAndExamples\\note_positions4_6.1R1213.tsv\"",
-      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
-    },
-    "プロファイル 2": {
-      "commandName": "Project",
-      "commandLineArgs": " \"WG4\\noteXPaths.txt\" \"Shared\\Drafting rules and waiver\\Style changes work area\\Handback\\Older Handbacks\\29500-4 WD 6.1R - 2022-12-13.docx\"  \"WG4\\StatsOfNotesAndExamples\\note_positions4_6.1R1213.tsv\"",
+      "commandLineArgs": "\"WG4\\guidanceXPaths.txt\" \"j:\\29500-4 WD 6.1R - 2023-05-10.docx\" \"WG4\\StatsOfNotesAndExamples\\Guidances Part 4 WD 6.1R - 2023-05-10.txt\"",
       "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
     },
     "example4Block": {
       "commandName": "Project",
-      "commandLineArgs": "\"WG4\\exampleBlockXPaths.txt\" \"WG4\\29500-4 WD 6.1R - 2023-02-27 FC.docx\" \"WG4\\StatsOfNotesAndExamples\\Examples Part 4 WD 6.1R - 2023-02-27 FC.txt\"",
+      "commandLineArgs": "\"WG4\\exampleBlockXPaths.txt\" \"j:\\29500-4 WD 6.1R - 2023-05-10.docx\" \"WG4\\StatsOfNotesAndExamples\\ExampleBlocks Part 4 WD 6.1R - 2023-05-10.txt\"",
       "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
     },
     "example1Block": {
       "commandName": "Project",
-      "commandLineArgs": "\"WG4\\exampleBlockXPaths.txt\"  \"WG4\\29500-1 WD 6.1R-2023-03-04.docx\" \"WG4\\StatsOfNotesAndExamples\\Examples Part 1 WD 6.1R-2023-03-04Block.tsv\"",
+      "commandLineArgs": "\"WG4\\exampleBlockXPaths.txt\"  \"j:\\29500-1 WD 6.1R-2023-05-09.docx\" \"WG4\\StatsOfNotesAndExamples\\ExampleBlocks Part 1 WD 6.1R-2023-05-09.txt\"",
       "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
-    }
+    },
+    "note4Block": {
+      "commandName": "Project",
+      "commandLineArgs": "\"WG4\\noteBlockXPaths.txt\" \"j:\\29500-4 WD 6.1R - 2023-05-10.docx\" \"WG4\\StatsOfNotesAndExamples\\NoteBlocks Part 4 WD 6.1R - 2023-05-10.txt\"",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
+    },
+    "note1Block": {
+      "commandName": "Project",
+      "commandLineArgs": "\"WG4\\noteBlockXPaths.txt\"  \"j:\\29500-1 WD 6.1R-2023-05-09.docx\" \"WG4\\StatsOfNotesAndExamples\\NoteBlocks Part 1 WD 6.1R-2023-05-09.txt\"",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
+    },
+    "note4A": {
+      "commandName": "Project",
+      "commandLineArgs": "\"WG4\\noteXPaths.txt\" \"j:\\29500-4 WD 6.1R - 2022-12-16.docx\" \"WG4\\StatsOfNotesAndExamples\\Notes Part 4 WD 6.1R - 2022-12-16.txt\"",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
+    },
+    "note4B": {
+      "commandName": "Project",
+      "commandLineArgs": "\"WG4\\noteXPaths.txt\" \"j:\\29500-4 WD 6.1R - 2023-01-06.docx\" \"WG4\\StatsOfNotesAndExamples\\Notes Part 4 WD 6.1R - 2023-01-06.txt\"",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
+    },
+    "note4C": {
+      "commandName": "Project",
+      "commandLineArgs": "\"WG4\\noteXPaths.txt\" \"j:\\29500-4 WD 6.1R - 2023-01-24.docx\" \"WG4\\StatsOfNotesAndExamples\\Notes Part 4 WD 6.1R - 2023-01-24.txt\"",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
+    },
+    "note4D": {
+      "commandName": "Project",
+      "commandLineArgs": "\"WG4\\noteXPaths.txt\" \"j:\\29500-4 WD 6.1R - 2023-02-27 FC.docx\" \"WG4\\StatsOfNotesAndExamples\\Notes Part 4 WD 6.1R - 2023-02-27 FC.txt\"",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
+    },
+    "note4E": {
+      "commandName": "Project",
+      "commandLineArgs": "\"WG4\\noteXPaths.txt\" \"j:\\29500-4 WD 6.1R - 2023-03-16.docx\" \"WG4\\StatsOfNotesAndExamples\\Notes Part 4 WD 6.1R - 2023-03-16.txt\"",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
+    },
+    "note4F": {
+      "commandName": "Project",
+      "commandLineArgs": "\"WG4\\noteXPaths.txt\" \"j:\\29500-4 WD 6.1R - 2023-04-02.docx\" \"WG4\\StatsOfNotesAndExamples\\Notes Part 4 WD 6.1R - 2023-04-02.txt\"",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
+    },
+    "note4G": {
+      "commandName": "Project",
+      "commandLineArgs": "\"WG4\\noteXPaths.txt\" \"j:\\29500-4 WD 6.1R - 2023-04-14.docx\" \"WG4\\StatsOfNotesAndExamples\\Notes Part 4 WD 6.1R - 2023-04-14.txt\"",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
+    },
+    "note4H": {
+      "commandName": "Project",
+      "commandLineArgs": "\"WG4\\noteXPaths.txt\" \"j:\\29500-4 WD 6.1R - 2023-04-27.docx\" \"WG4\\StatsOfNotesAndExamples\\Notes Part 4 WD 6.1R - 2023-04-27.txt\"",
+      "workingDirectory": "C:\\Users\\eb2m-\\OneDrive"
+    }  
   }
 }
+
