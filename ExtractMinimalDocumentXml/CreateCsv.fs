@@ -22,8 +22,9 @@ let createTableCsv (doc: XDocument) man (sectionFinder: XElement -> string) sw =
         if aTablesSet.Contains(table) |> not then
             let secnum = sectionFinder table
             let strValue = table.Value
-            let shortenedStrValue = strValue.Substring(0, min 100 (strValue.Length - 1) )
-            fprintfn sw "%s\tTable\t%s" secnum shortenedStrValue
+            if strValue <> "" then
+                let shortenedStrValue = strValue.Substring(0, min 100 (strValue.Length - 1) )
+                fprintfn sw "%s\tTable\t%s" secnum shortenedStrValue
 
 
 let createCsv doc tableOrFigure part1P (outputCsvFileName: string) = 
